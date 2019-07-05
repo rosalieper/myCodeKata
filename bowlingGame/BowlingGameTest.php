@@ -16,9 +16,9 @@ class BowlingGameTest extends PHPUnit\Framework\TestCase {
         $this->g = new Game();
     }
 
-    public function rollMany($totalNumRoll, $numPinsDown ){
-        for( $i = 0; $i < $totalNumRoll; $i++ ) {
-            $this->g->roll($numPinsDown);
+    public function rollMany($numRoll, $numPinsPerRoll ){
+        for($i = 0; $i < $numRoll; $i++ ) {
+            $this->g->roll($numPinsPerRoll);
         }
     }
 
@@ -27,6 +27,7 @@ class BowlingGameTest extends PHPUnit\Framework\TestCase {
      */
     public function testGutterGame() {
         $this->rollMany(20, 0);
+
         $this->assertEquals( 0, $this->g->score() );
     }
 
@@ -35,6 +36,16 @@ class BowlingGameTest extends PHPUnit\Framework\TestCase {
      */
     public function testAllOnes() {
         $this->rollMany(20, 1);
+
         $this->assertEquals( 20, $this->g->score() );
+    }
+
+    public function testOneSpare() {
+        $this->g->roll(5);
+        $this->g->roll(5);
+        $this->g->roll(3);
+        $this->rollMany(17, 0);
+
+        $this->assertEquals(16, $this->g->score() );
     }
 }
