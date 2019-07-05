@@ -41,11 +41,18 @@ class BowlingGameTest extends PHPUnit\Framework\TestCase {
     }
 
     public function testOneSpare() {
-        $this->g->roll(5);
-        $this->g->roll(5);
+        $this->rollSpare();
         $this->g->roll(3);
         $this->rollMany(17, 0);
 
         $this->assertEquals(16, $this->g->score() );
+    }
+
+    /**
+     * Makes a spare game
+     */
+    public function rollSpare() {
+        $this->g->roll(5);
+        $this->g->roll(5);
     }
 }
