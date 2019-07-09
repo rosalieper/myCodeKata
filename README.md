@@ -1,7 +1,7 @@
 My Code Katas
 ==============
 
-This repository holds a number of kata execises I used to practice
+This repository holds a number of kata exercises I used to practice
 
 * TDD
 * SOLID Principle
@@ -11,4 +11,4 @@ This repository holds a number of kata execises I used to practice
 * Agile
 * Pair programming
 
-Exesises gotten from: kata-log.rocks/bowling-game-kata
+Exercises gotten from: kata-log.rocks
