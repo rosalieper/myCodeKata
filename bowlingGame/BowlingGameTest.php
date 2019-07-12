@@ -87,4 +87,8 @@ class BowlingGameTest extends PHPUnit\Framework\TestCase {
         $this->assertEquals(24, $this->g->score() );
     }
 
+    public function testPerfectGame() {
+        $this->rollMany( 12, 10 );
+        $this->assertEquals( 300, $this->g->score() );
+    }
 }
