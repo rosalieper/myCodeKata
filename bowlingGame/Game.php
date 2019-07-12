@@ -5,10 +5,18 @@ namespace BowlingGame;
  * @package BowlingGame
  */
 class Game {
-
+    /**
+     * @var array
+     */
    private $rolls = [];
+    /**
+     * @var int
+     */
    private $currentRoll = 0;
 
+    /**
+     * Game constructor.
+     */
    public function __construct() {
 
    }
@@ -50,6 +58,10 @@ class Game {
        return ( $this->rolls[$frameIndex] + $this->rolls[$frameIndex+1] ) === 10;
    }
 
+    /**
+     * @param $frameIndex
+     * @return bool
+     */
    public function isStrike( $frameIndex ) {
        return $this->rolls[$frameIndex] === 10;
    }

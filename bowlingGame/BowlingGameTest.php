@@ -9,13 +9,22 @@ use BowlingGame\Game;
  */
 
 class BowlingGameTest extends PHPUnit\Framework\TestCase {
-
+    /**
+     * @var
+     */
     protected $g;
 
+    /**
+     *
+     */
     public function setUp() {
         $this->g = new Game();
     }
 
+    /**
+     * @param int
+     * @param int
+     */
     public function rollMany( $numRoll, $numPinsPerRoll ){
         for($i = 0; $i < $numRoll; $i++ ) {
             $this->g->roll($numPinsPerRoll);
@@ -28,6 +37,13 @@ class BowlingGameTest extends PHPUnit\Framework\TestCase {
     public function rollSpare() {
         $this->g->roll(5);
         $this->g->roll(5);
+    }
+
+    /**
+     * Make a strike game
+     */
+    public function rollStrike() {
+        $this->g->roll(10);
     }
 
     /**
@@ -48,6 +64,9 @@ class BowlingGameTest extends PHPUnit\Framework\TestCase {
         $this->assertEquals( 20, $this->g->score() );
     }
 
+    /**
+     *Make a spare game out of 20 rolls
+     */
     public function testOneSpare() {
         $this->rollSpare();
         $this->g->roll(3);
@@ -56,12 +75,16 @@ class BowlingGameTest extends PHPUnit\Framework\TestCase {
         $this->assertEquals(16, $this->g->score() );
     }
 
+    /**
+     *Make a strike out of 20 rolls
+     */
     public function testOneStrike() {
-        $this->g->roll(10);
+        $this->rollStrike();
         $this->g->roll(3);
         $this->g->roll(4);
         $this->rollMany(16, 0);
 
         $this->assertEquals(24, $this->g->score() );
     }
+
 }
