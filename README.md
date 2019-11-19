@@ -18,7 +18,7 @@ To run the php test,
 - run as `phpunit <path to test>`
 ##
 To run the Js test,
--`npm install`
+- `npm install`
 - `npm test`
 
 Exercises gotten from: kata-log.rocks
