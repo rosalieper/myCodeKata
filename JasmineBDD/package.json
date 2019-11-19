@@ -1,0 +1,14 @@
+{
+  "name": "getting-started-mit-jasmine",
+  "version": "1.0.0",
+  "description": "BDD with jasmine learning project",
+  "main": "index.js",
+  "scripts": {
+    "test": "jasmine"
+  },
+  "author": "Rosalie <me@me.me>",
+  "license": "ISC",
+  "devDependencies": {
+    "jasmine": "^3.5.0"
+  }
+}

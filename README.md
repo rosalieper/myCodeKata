@@ -12,9 +12,13 @@ This repository holds a number of kata exercises I used to practice
 * Pair programming
 
 ##
-To run the test form this repo,
+To run the php test,
 - install phpunit v6^
 - `cd myCodeKatas`
 - run as `phpunit <path to test>`
+##
+To run the Js test,
+-`npm install`
+- `npm test`
 
 Exercises gotten from: kata-log.rocks
